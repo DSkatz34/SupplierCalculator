@@ -1,0 +1,51 @@
+﻿
+@model List<p_CountAverageWeeklyBySupplier_Result>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div>
+
+
+    <table class="table table-bordered  table-striped" id="userTable">
+        <thead>
+            <tr>
+                <th>SupplierId</th>
+                <th>SupplierName</th>
+                <th>AverageWeeklySales</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach(var supplier in Model)
+            {
+                <tr>
+
+                    <td>@supplier.Supplierid</td>
+                    <td>@supplier.SupplierName</td>
+                    <td>@supplier.AverageWeeklySales</td>
+
+                </tr>
+
+            }
+
+
+
+
+
+        </tbody>
+</table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#userTable').DataTable({
+            "aaSorting": [],
+            filter:true
+        });
+
+
+    });
+
+
+</script>
+ 
